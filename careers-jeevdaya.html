@@ -1,0 +1,31 @@
+    <div class="row" style="">
+        <script>
+            document.onreadystatechange = function(e)
+            {
+                //if neither src nor p is provided, use src=careers
+                if(window.parent.location.search === ""){
+                    window.parent.location = window.parent.location + '?src=careers';
+                }
+
+                if (window.location.origin === undefined || window.location.origin === null) {
+                    window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
+                }
+
+                var myUrl = (window.location.origin).toLowerCase();
+                var suffix = "smaclify.com";
+                var suffix2 = "mynexthire.com";
+                if(myUrl.indexOf((suffix, myUrl.length - suffix.length) != -1) || ((suffix2, myUrl.length - suffix2.length) != -1)){
+                    document.getElementById("jobboardPages").src = myUrl + "/employer/jobs/careers" + "#" + window.parent.location.search;
+                } else{
+                    var iFrameSrc = document.getElementById("jobboardPages").src;
+                    document.getElementById("jobboardPages").src = iFrameSrc + "#" + window.parent.location.search;
+                }                
+            };
+        </script>
+        <iframe 
+            class="col-xs-12"
+            style="min-height:100vh; width:100%; border:none; padding-top:2vh;"
+            id="jobboardPages" 
+            src="http://smaclify.mynexthire.com/employer/jobs/careers">
+        </iframe>
+    </div>
