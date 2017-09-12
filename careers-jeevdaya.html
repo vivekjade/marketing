@@ -1,8 +1,33 @@
-    <div>    
+<div style="width:100%">
+    this is <br> my new line content.<br><br> this should always stay here at the top
+</div>
+    <div class="row" style="">
+        <script>
+            document.onreadystatechange = function(e)
+            {
+                if (window.location.origin === undefined || window.location.origin === null) {
+                    window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
+                }
+
+                var myUrl = (window.location.origin).toLowerCase();
+                var suffix = "smaclify.com";
+                var suffix2 = "mynexthire.com";
+                if(myUrl.indexOf((suffix, myUrl.length - suffix.length) != -1) || ((suffix2, myUrl.length - suffix2.length) != -1)){
+                    document.getElementById("mnhembedded").src = myUrl + "/employer/jobs/careers" + "#" + window.parent.location.search;
+                } else{
+                    var iFrameSrc = document.getElementById("mnhembedded").src;
+                    document.getElementById("mnhembedded").src = iFrameSrc + "#" + window.parent.location.search;
+                }                
+            };
+        </script>
         <iframe 
             class="col-xs-12"
             style="min-height:100vh; width:100%; border:none; padding-top:2vh;"
-            id="jobboardPages" 
+            id="mnhembedded" 
             src="https://pushkar.iqa.mynexthire.com/employer/jobs/careers">
         </iframe>
     </div>
+    <div style="width:100%">
+        this is my bottom <br> new line content
+    </div>
+        
