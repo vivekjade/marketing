@@ -17,6 +17,7 @@
                 } else{
                     var iFrameSrc = document.getElementById("mnhembedded").src;
                     document.getElementById("mnhembedded").src = iFrameSrc + "#" + window.parent.location.search;
+                    alert(document.getElementById("mnhembedded").src);
                 }                
             };
         </script>
