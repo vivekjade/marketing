@@ -1,11 +1,11 @@
 <div style="width:100%">
-    this is <br> my new line content.<br><br> this should always stay here at the top
+    this is <br> my new line content.<br><br> this should always stay here at the top!
 </div>
     <div class="row" style="">
         <script>
-            document.onreadystatechange = function(e)
-            {
-                if (window.location.origin === undefined || window.location.origin === null) {
+            document.onreadystatechange = function(e){
+                if(document.readyState === "complete"){
+                    if (window.location.origin === undefined || window.location.origin === null) {
                     window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
                 }
 
@@ -15,16 +15,19 @@
                 if((myUrl.indexOf(suffix, myUrl.length - suffix.length) != -1) && (myUrl.indexOf(suffix2, myUrl.length - suffix2.length) != -1)){
                     document.getElementById("mnhembedded").src = myUrl + "/employer/jobs/careers" + "#" + window.parent.location.search;
                 } else{
-                    var iFrameSrc = document.getElementById("mnhembedded").src;
-                    document.getElementById("mnhembedded").src = iFrameSrc + "#" + window.parent.location.search;
-                }                
+                    // var iFrameSrc = document.getElementById("mnhembedded").src;
+                    // document.getElementById("mnhembedded").src = iFrameSrc + "#" + window.parent.location.search;
+                    document.getElementById("mnhembedded").src = "https://pushkar.iqa.mynexthire.com/employer/jobs/careers" + "#" + window.parent.location.search;
+                }            
+                alert("I'm from main page script; Top is:" +  myUrl + " and iframe is :" + document.getElementById("mnhembedded").src);    
+                }
             };
         </script>
         <iframe 
             class="col-xs-12"
             style="min-height:100vh; width:100%; border:none; padding-top:2vh;"
             id="mnhembedded" 
-            src="https://pushkar.iqa.mynexthire.com/employer/jobs/careers">
+            src="">
         </iframe>
     </div>
     <div style="width:100%">
