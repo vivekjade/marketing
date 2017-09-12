@@ -12,7 +12,7 @@
                 var myUrl = (window.location.origin).toLowerCase();
                 var suffix = "smaclify.com";
                 var suffix2 = "mynexthire.com";
-                if(myUrl.indexOf((suffix, myUrl.length - suffix.length) != -1) || ((suffix2, myUrl.length - suffix2.length) != -1)){
+                if(myUrl.indexOf((suffix, myUrl.length - suffix.length) != -1) && ((suffix2, myUrl.length - suffix2.length) != -1)){
                     document.getElementById("mnhembedded").src = myUrl + "/employer/jobs/careers" + "#" + window.parent.location.search;
                 } else{
                     var iFrameSrc = document.getElementById("mnhembedded").src;
